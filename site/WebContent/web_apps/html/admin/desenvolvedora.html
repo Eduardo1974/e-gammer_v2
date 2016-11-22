@@ -1,0 +1,41 @@
+<form class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Desenvolvedora</h2>
+			<div class="linha"></div>
+		</div>
+	</div>
+	<div class="form-group ">
+		<div class="input-group ">
+			<div class="input-group-addon">
+				<i class="fa fa-paint-brush"></i>
+			</div>
+			<input type="text" class="form-control" placeholder="Studio"
+				ng-model="desenvolvedora.studio">
+		</div>
+	</div>
+	<div class="form-group ">
+		<div class="input-group">
+			<div class="input-group-addon">
+				<i class="fa fa-connectdevelop"></i>
+			</div>
+			<input type="text" class="form-control"
+				placeholder="Desenvolvedora"
+				ng-model="desenvolvedora.distribuidora">
+		</div>
+	</div>
+
+	<div class="form-group ">
+		<button type="submit" class="templatemo-blue-button width-30" ng-show="btnLabel == 'Adicionar'"
+			ng-click="salvar()">{{btnLabel}}</button>
+	</div>
+	
+	<div class="form-group ">
+		<button type="submit" class="templatemo-blue-button width-30" ng-show="btnLabel == 'Alterar'"
+			ng-click="editar(desenvolvedora)">{{btnLabel}}</button>
+	
+		<button type="submit" class="templatemo-blue-button width-30" ng-show="btnLabel == 'Alterar'"
+			ng-click="desenvolvedoraCancel();">Cancelar</button>
+	</div>
+	
+</form>

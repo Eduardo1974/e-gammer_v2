@@ -1,0 +1,61 @@
+.templatemo-sidebar { width: 200px; }
+
+
+.templatemo-left-nav { background: #1f2124; }
+.templatemo-left-nav li { font-weight: 300; }
+.templatemo-left-nav a.active,
+.templatemo-left-nav a:hover {
+	background: #18191b;
+	border-left: 8px solid #13895F;
+}
+.templatemo-left-nav a {
+	color: #e9e9ea;
+	display: block;
+	padding: 20px;
+	transition: all 0.3s ease;
+	outline: 0px; /* remove pontilhado em volta do link */
+	text-decoration: none; /* remove underline link visitado */
+}
+.templatemo-left-nav .fa { margin-right: 15px; }
+
+
+
+@media screen and (max-width: 1199px) and (min-width: 991px) {
+	.templatemo-sidebar { width: 250px;	}
+	.templatemo-left-nav a { padding: 15px; }
+}
+
+@media screen and (max-width: 992px) and (min-width: 768px) {
+	.templatemo-sidebar { width: 200px; } 
+	.templatemo-left-nav a.active,
+	.templatemo-left-nav a:hover {
+		border-left: 6px solid #13895F;		
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.templatemo-left-nav a { padding: 15px 10px; }	
+}
+
+@media only screen and (min-width: 768px) {
+	.templatemo-left-nav {	display: block !important; }
+}
+
+@media screen and (max-width: 767px) {
+	/* Left column */
+	.templatemo-left-nav {
+		display: none;
+		position: fixed;
+		top: 10px;
+		right: 50px;		
+		height: 300px;
+		overflow: auto;
+		width: 200px;
+		z-index: 999;
+	}
+	.templatemo-left-nav a.active, 
+	.templatemo-left-nav a:hover {
+		border-left: 4px solid #13895F;	
+	}
+
+}

@@ -1,0 +1,65 @@
+<!-- <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">  
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+-->
+
+<div class="row" id="principal">
+				
+	<div class="container">
+		<div  id="conteudo">
+			<div class="container-pagination">
+				<div class="row">
+					<span class="col-md-2 fields-css">
+						<label>Preço:</label>
+						<select class="form-control" ng-options="preco as preco.nome for preco in filtroPreco " ng-model="filtroSelecionado">
+							<option value="0">crescente</option>
+						</select>
+					</span>
+					<span class="col-md-2 fields-css">
+						<label>Exibir:</label>
+						<select class="form-control" name="select" ng-model="itemsPerPage" ng-options="op for op in numPeginas">
+						</select>
+					</span>
+					<span style="float: right;">
+						<uib-pagination boundary-links="true" total-items="listGames.length" ng-model="currentPage" 
+							items-per-page="itemsPerPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" 
+							first-text="&laquo;" last-text="&raquo;" ng-change="pageChange()">
+						</uib-pagination>
+					</span>
+				</div> 
+
+			
+				
+			</div> <!-- .filter-bar -->
+			
+			<div class="product-list">
+				<div class="product" ng-if="listGames.length != 0" ng-repeat="game in listGames.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) | orderBy:'gam_preco':filtroSelecionado.valor "  >
+					<div class="inner-product">
+						<div class="figure-image">
+							<a href="#/detalhes" ng-click="detalhes(game)"><img ng-src="{{game.imgCapa}}" id="capa-game"></a>
+						</div>
+						<h3 class="product-title"><a href="#/detalhes">{{game.titulo}}</a></h3>
+						<small class="price">{{game.preco | currency}}</small>
+						<p>{{game.descricao.substring(0, 70)}}...</p>
+						<a href="" class="button unmuted" ng-click="addCarrinho(game)">Add carrinho</a>
+						<a href="#/detalhes" class="button muted" ng-click="detalhes(game)">Mais detalhes</a>
+					</div>
+				</div> <!-- .product-list -->
+			</div> <!-- .product-list -->
+				
+		</div>
+		
+		<div class="container-pagination">
+			<div class="row">
+				<center>
+					<uib-pagination boundary-links="true" total-items="listGames.length" ng-model="currentPage" 
+						items-per-page="itemsPerPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" 
+						first-text="&laquo;" last-text="&raquo;" ng-change="pageChange()">
+					</uib-pagination>
+				</center>
+			</div>
+		</div>
+		
+	</div> <!-- .container -->
+
+</div>

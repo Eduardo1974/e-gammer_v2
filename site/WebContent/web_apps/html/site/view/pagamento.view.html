@@ -1,0 +1,314 @@
+<!-- <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">  
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+-->
+
+<div class="row" id="principal">
+				
+	<main class="main-content">
+		<div class="container">
+			<div class="page">
+				
+				<section id="escolha-pagamento">
+					<div style="background-color: #f5f5f5; padding:10px; border-radius: 5px;">
+						<b>ESCOLHA A FORMA PARA PAGAMENTO DO SEU PEDIDO</b>
+					</div>
+					<form>
+						<div id="opcao-pagamento">
+							<div class="icone-pagamento">
+								<img src="https://www.kabum.com.br/conteudo/temas/001/imagens/icones/i-pag-boleto.gif">
+							</div>
+							<div class="texto-pagmento">
+								<div style="float: right;">
+  									<img src="https://www.kabum.com.br/conteudo/temas/001/imagens/rodape/band_boleto.png">
+  								</div>
+								<h1>Boleto Bancário</h1>
+								<h2>Ganhe até 15% de desconto, válido para todo o Brasil!</h2>
+								Este é o método mais prático para quem deseja pagar à vista. Você poderá efetuar o pagamento do boleto em qualquer
+								<br>
+								Banco ou Casa Lotérica em qualquer lugar do Brasil, sem necessidade de confirmação do pagamento. Além disso, é a
+								<br>
+								forma de pagamento que recebe o maior desconto para cliente final sob o valor total da compra.
+								
+								<div class="total-pagamento">
+  									<span style="color: #000000;">O total a pagar de sua compra é de</span> {{valor.total | currency}}
+  									<span style="color: #000000;">Por este método de pagamento, será </span> {{(valor.total/100)*85 | currency}}
+  								</div>
+  							</div>
+  							<div>
+  								<div class="bot-pagamento">
+  									<input ng-click = "confirmarCompra()" style="border:0" src="https://www.kabum.com.br/conteudo/temas/001/imagens/caixa/bot-pag-boleto.gif" name="BOLETO" type="image">
+  								</div>
+  								<input type="hidden" name="pagamento" value="1">
+							</div>
+						</div>
+					</form>
+					<div id="opcao-pagamento">
+					  <form>
+			  			<div class="icone-pagamento">
+			  				<img src="https://www.kabum.com.br/conteudo/temas/001/imagens/icones/i-pag-debconta.gif">
+			  			</div>
+				  			<div class="texto-pagmento">
+				  				<div style="float: right;">
+				  					<img height="28" src="https://www.kabum.com.br/conteudo/temas/001/imagens/caixa/pag-debito-itau.gif">
+				  				</div>
+				  				<h1>Banco Itaú - Débito em Conta</h1>
+				  				<h2>Ganhe até 15% de desconto, válido para todo o Brasil!</h2>
+				  				ESTE MÉTODO DE PAGAMENTO É <u>VÁLIDO APENAS PARA CLIENTES DO BANCO 
+ 				  				ITAÚ</u>. Você efetua o pagamento debitando o valor direto de sua 
+				  				conta por esta ferramenta extremamente segura, desenvolvida pelo 
+				  				próprio Banco Itaú. Além disso, é a forma de pagamento mais rápida 
+				  				para liberação dos pedidos.<br><br><strong><u>OBSERVAÇÃO:</u></strong>Caso 
+				  				você não consiga concluir o pagamento através de débito em conta, 
+				  				por qualquer motivo que seja, o sistema irá lhe fornecer o boleto 
+				  				bancário automaticamente como segunda opção.
+				  			</div>
+				  			<div class="total-pagamento" style="margin-left: 35px;">
+				  				<span style="color: #000000;">O total a pagar de sua compra é de</span> 
+				  				{{valor.total | currency}} <span style="color: #000000;">Por este método de pagamento, 
+				  				será </span> {{(valor.total/100)*85 | currency}} 
+				  			</div>
+				  			<div class="bot-pagamento">
+				  				<input style="border:0" src="https://www.kabum.com.br/conteudo/temas/001/imagens/caixa/bot-pag-debitoconta.gif" name="DEBITO" type="image">
+				  			</div>
+					
+					  		<input type="hidden" name="pagamento" value="57">
+					
+					  </form>
+					</div>
+					<div id="opcao-pagamento">
+					  	<form> <!-- onsubmit="return checkFieldsCartao(this)" -->
+					  		<div class="icone-pagamento" style="height: 460px;">
+					  			<img src="https://www.kabum.com.br/conteudo/temas/001/imagens/icones/i-pag-credito.gif">
+					  		</div>
+					  		<div class="texto-pagmento">
+					  			<div style="float: right;">
+					  				<img height="28" src="https://www.kabum.com.br/conteudo/temas/001/imagens/caixa/cartoes-pag-cartao.gif" width="311"></div>
+					  			<h1>Cartão de crédito</h1>
+					  			<h2><strong>À vista com até 10% de desconto, 2x ou 3x com até 5% de desconto ou tudo em até 10x sem juros!</strong></h2>
+					  			<p>O E-Gammer.com! aceita as bandeiras de cartão <b>VISA, MasterCard, ELO, HiperCard, American Express e Diners</b> - Todos em até 10x sem juros ou com desconto em até 3x!</p>
+					  			<p></p>
+					  			<p></p>
+					  			<table class="myTable" align="center" border="0" cellpadding="0" cellspacing="0" width="680">
+					  				<tbody>
+					  					<tr>
+					  						<td><strong>Dados do Cartão</strong></td>
+					  					</tr>
+						  				<tr>
+						  					<td>Forma de pagamento:*</td>
+						  					<td>
+						  						<strong>
+								  					<select id="appearance-select" style="width: 350px;">
+								  						<option value="01">À vista - Até 10% de desconto - {{(valor.total/100)*90 | currency}} </option>
+								  						<option value="02">2x com desconto de até 5% - {{((valor.total/100)*95)/2 | currency}} </option>
+								  						<option value="03">3x com desconto de até 5% - {{((valor.total/100)*95)/3 | currency}} </option> 
+								  						<option value="04">4x sem juros - {{(valor.total/4) | currency}} </option> 
+								  						<option value="05">5x sem juros - {{(valor.total/5) | currency}}</option> 
+								  						<option value="06">6x sem juros - {{(valor.total/6) | currency}}</option> 
+								  						<option value="07">7x sem juros - {{(valor.total/7) | currency}}</option> 
+								  						<option value="08">8x sem juros - {{(valor.total/8) | currency}}</option>
+								  						<option value="09">9x sem juros - {{(valor.total/9) | currency}}</option>
+								  						<option value="10">10x sem juros - {{(valor.total/10) | currency}}</option>
+								  					</select> 
+							  					</strong>
+							  				</td>
+						  				</tr>
+						  				<tr>
+						  					<td>Nome (escrito no cartão):</td>
+						  					<td>
+						  					<input style="width: 300px" class="form-control" name="cartao_nome" size="40" tabindex="2" type="text"></td>
+						  				</tr>
+						  				<tr>
+						  					<td>Número do cartão:*</td>
+						  					<td>
+						  					<input style="width: 300px" class="form-control" maxlength="16" name="cartao_numero" size="40" tabindex="3" type="number"></td>
+						  				</tr>
+						  				<tr>
+						  					<td>Validade (mm/aa):</td>
+						  					<td>
+						  						<strong>
+								  					<select id="appearance-select" style="width: 60px; background-position: 30px center;" name="cartao_mes" size="1" tabindex="4">
+									  					<option value=""></option>
+									  					<option value="01">01</option>
+									  					<option value="02">02</option>
+									  					<option value="03">03</option>
+									  					<option value="04">04</option>
+									  					<option value="05">05</option>
+									  					<option value="06">06</option>
+									  					<option value="07">07</option>
+									  					<option value="08">08</option>
+									  					<option value="09">09</option>					
+									  					<option value="10">10</option>				
+									  					<option value="11">11</option>			
+									  					<option value="12">12</option>
+													</select>
+								  					<select id="appearance-select" style="width: 60px; background-position: 30px center;" name="cartao_ano" size="1" tabindex="5">
+														<option value="16">16</option>
+								  						<option value="17">17</option>
+									  					<option value="18">18</option>
+									  					<option value="19">19</option>
+									  					<option value="20">20</option>
+									  					<option value="21">21</option>
+									  					<option value="22">22</option>
+									  					<option value="23">23</option>
+											            <option value="24">24</option>
+											            <option value="25">25</option>
+											            <option value="26">26</option>
+											            <option value="27">27</option>
+											            <option value="28">28</option>
+											            <option value="29">29</option>
+											            <option value="30">30</option>
+													</select> 
+												</strong>
+											</td>
+						  				</tr>
+						  				<tr>
+						  					<td>Código de segurança:*</td>
+						  					<td>
+						  						<input style="width: 50px;" class="form-control" maxlength="4" name="cartao_codigoseguranca" size="3" tabindex="6" type="number"> 
+						  						(Últimos 3 dígitos atrás do cartão ou 4 digitos na frente se for American Express)
+						  					</td>
+						  				</tr>
+						  				<tr>
+						  					<td>CPF do proprietário do cartão:*</td>
+						  					<td>
+						  						<input style="width: 300px" class="form-control" name="cartao_cpf" size="40" tabindex="7" type="number">
+						  					</td>
+						  				</tr>
+						  				<tr>
+						  					<td>Data de nascimento:*</td>
+						  					<td class="product-qty">
+						  						<strong>
+								  					<select id="appearance-select" style="width: 60px; background-position: 30px center;" name="cartao_dia_nascimento" size="1" tabindex="8">
+									  					<option value=""></option>
+									  					<option value="01">01</option>
+									  					<option value="02">02</option>
+									  					<option value="03">03</option>
+									  					<option value="04">04</option>
+									  					<option value="05">05</option>
+									  					<option value="06">06</option>
+									  					<option value="07">07</option>
+									  					<option value="08">08</option>
+									  					<option value="09">09</option>
+									  					<option value="10">10</option>
+									  					<option value="11">11</option>
+									  					<option value="12">12</option>
+									  					<option value="13">13</option>
+									  					<option value="14">14</option>
+									  					<option value="15">15</option>
+									  					<option value="16">16</option>
+									  					<option value="17">17</option>
+									  					<option value="18">18</option>
+									  					<option value="19">19</option>
+									  					<option value="20">20</option>
+									  					<option value="21">21</option>
+									  					<option value="22">22</option>
+									  					<option value="23">23</option>
+									  					<option value="24">24</option>
+									  					<option value="25">25</option>
+									  					<option value="26">26</option>					  					
+									  					<option value="27">27</option>
+									  					<option value="28">28</option>
+									  					<option value="29">29</option>
+									  					<option value="30">30</option>
+									  					<option value="31">31</option>
+								  					</select> 
+								  					<select id="appearance-select" style="width: 60px; background-position: 30px center;" name="cartao_mes_nascimento" size="1" tabindex="9">
+									  					<option value=""></option>
+									  					<option value="01">01</option>
+									  					<option value="02">02</option>
+									  					<option value="03">03</option>
+									  					<option value="04">04</option>
+									  					<option value="05">05</option>
+									  					<option value="06">06</option>
+									  					<option value="07">07</option>
+									  					<option value="08">08</option>
+									  					<option value="09">09</option>
+									  					<option value="10">10</option>
+									  					<option value="11">11</option>
+									  					<option value="12">12</option>
+								  					</select>
+								  					<select id="appearance-select" style="width: 80px; background-position: 50px center;" name="cartao_ano_nascimento" size="1" tabindex="10">
+								  						<option value=""></option>
+														<option value="2008">2008</option>
+														<option value="2007">2007</option>
+														<option value="2006">2006</option>
+														<option value="2005">2005</option>
+														<option value="2004">2004</option>
+														<option value="2003">2003</option>
+														<option value="2002">2002</option>
+														<option value="2001">2001</option>
+														<option value="2000">2000</option>
+														<option value="1999">1999</option>
+														<option value="1998">1998</option>
+														<option value="1997">1997</option>
+														<option value="1996">1996</option>
+														<option value="1995">1995</option>
+														<option value="1994">1994</option>
+														<option value="1993">1993</option>
+														<option value="1992">1992</option>
+														<option value="1991">1991</option>
+														<option value="1990">1990</option>
+														<option value="1989">1989</option>
+														<option value="1988">1988</option>
+														<option value="1987">1987</option>
+														<option value="1986">1986</option>
+														<option value="1985">1985</option>
+														<option value="1984">1984</option>
+														<option value="1983">1983</option>
+														<option value="1982">1982</option>
+														<option value="1981">1981</option>
+														<option value="1980">1980</option>
+														<option value="1979">1979</option>
+														<option value="1978">1978</option>
+														<option value="1977">1977</option>
+														<option value="1976">1976</option>
+														<option value="1975">1975</option>
+														<option value="1974">1974</option>
+														<option value="1973">1973</option>
+														<option value="1972">1972</option>
+														<option value="1971">1971</option>
+														<option value="1970">1970</option>
+														<option value="1969">1969</option>
+														<option value="1968">1968</option>
+														<option value="1967">1967</option>
+														<option value="1966">1966</option>
+														<option value="1965">1965</option>
+														<option value="1964">1964</option>
+														<option value="1963">1963</option>
+														<option value="1962">1962</option>
+														<option value="1961">1961</option>
+														<option value="1960">1960</option>
+														<option value="1959">1959</option>
+														<option value="1958">1958</option>
+														<option value="1957">1957</option>
+														<option value="1956">1956</option>
+														<option value="1955">1955</option>
+														<option value="1954">1954</option>
+														<option value="1953">1953</option>
+														<option value="1952">1952</option>
+														<option value="1951">1951</option>
+														<option value="1950">1950</option>
+								  					</select>
+						  						</strong>
+						  					</td>
+						  				</tr>
+						  				<tr>
+						  					<td></td>
+						  					<td></td>
+						  				</tr>
+					  				</tbody>
+					  			</table>
+					  		</div>
+					  	</form>
+					  	<div class="bot-pagamento">
+					  		<input style="border:0" src="https://www.kabum.com.br/conteudo/temas/001/imagens/caixa/bot-pag-cartao.gif" name="CARTAO" type="image">
+					  	</div>
+					</div>
+				</section>
+				
+			</div>
+		</div> <!-- .container -->
+	</main> <!-- .main-content -->
+
+</div><!-- FECHA PRINCIPAL -->

@@ -1,0 +1,35 @@
+
+<div class="container-fluid ">
+	<div class="form-group ">
+		<button type="submit" class="templatemo-blue-button width-30" ng-click="novoGame()">Novo</button>
+		<div class="linha"></div>
+	</div>
+	<table class="table table-striped ">
+		<thead >
+			<tr>
+				<th>Descrição</th>
+			</tr>
+		</thead>
+		<tbody >
+			<tr data-ng-repeat="gam in games.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))"  ng-if="games.length != 0">
+				
+				<td class="col-md-9">{{gam.titulo}}</td>
+				<td>
+                          <a class="btn btn-danger" ng-click="gameDelete(gam.codigo);"> <i class="fa fa-trash-o"></i> Apagar</a>
+                          <a class="btn btn-warning" ng-click="gameEditar(gam);"> <i class="fa fa-trash-o"></i> Editar</a>
+                 </td>
+			</tr>
+			<tr ng-if="games.length == 0">
+				<td>
+					<p>Não existem Games Cadastrados</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	</br>
+	
+	<uib-pagination boundary-links="true" total-items="games.length" ng-model="currentPage" 
+		items-per-page="itemsPerPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" 
+		first-text="&laquo;" last-text="&raquo;" ng-change="pageChange()"></uib-pagination>
+	</br>
+</div>

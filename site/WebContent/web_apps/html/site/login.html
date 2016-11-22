@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">  
+	    
+	    <title>E-gammer - Login</title>
+	    
+	    <link rel="icon" href="/e-gammer/web_apps/images/site/logo/logo_icone.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="/e-gammer/web_apps/images/site/logo/logo_icone.ico" type="image/x-icon" />
+		
+        <meta name="description" content="">
+        <meta name="author" content="templatemo">
+
+	</head>
+	<body class="light-gray-bg" ng-app="egammer"  >
+		<div ng-controller="LoginController">
+			<div class="templatemo-content-widget templatemo-login-widget white-bg">
+				<header class="text-center">
+		          <div class="square"></div>
+		          <h1>E-gammer</h1>
+		        </header>
+		        <form class="templatemo-login-form">
+		        	<div class="form-group">
+		        		<div class="input-group">
+			        		<div class="input-group-addon"><i class="fa fa-user fa-fw"></i></div>	        		
+			              	<input type="email" class="form-control" placeholder="js@dashboard.com" ng-model="usuario.email">           
+			          	</div>	
+		        	</div>
+		        	<div class="form-group">
+		        		<div class="input-group">
+			        		<div class="input-group-addon"><i class="fa fa-key fa-fw"></i></div>	        		
+			              	<input type="password" class="form-control" placeholder="******" ng-model="usuario.senha">           
+			          	</div>	
+		        	</div>	          	
+		          	<div class="form-group">
+					    <div class="checkbox squaredTwo">
+					        <input type="checkbox" id="c1" name="cc" />
+							<label for="c1"><span></span>Mantenha-me conectado</label>
+					    </div>				    
+					</div>
+					<div class="form-group">
+						<button type="submit" class="templatemo-blue-button width-100" ng-click="doLogin()">Login</button>
+					</div>
+		        </form>
+			</div>
+	        <div class="templatemo-content-widget templatemo-login-widget templatemo-register-widget white-bg">
+				<p> Ainda não tem uma conta?<strong><a href="registrar.html" class="blue-text"> Cadastre-se</a></strong></p>
+			</div>
+		</div>
+		<!-- JS -->
+		<script type="text/javascript" src="../../js/bibliotecas/angular.min.js"></script>
+		<script type="text/javascript" src="../../js/bibliotecas/angular-route.js"></script>
+		<script type="text/javascript" src="../../js/bibliotecas/angular-translate.js"></script>
+		<script type="text/javascript" src="../../js/comum/comum.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>
+		<link href="../../css/font-awesome.min.css" rel="stylesheet">
+		<link href="../../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../../css/templatemo-style.css" rel="stylesheet">
+		<link href="../../css/jquery-ui.css" rel="stylesheet">
+		<link href="../../css/bootstrap-datepicker.css" rel="stylesheet">
+		<link rel="stylesheet" href="../../css/site/alertify.rtl.css">
+		<link rel="stylesheet" href="../../css/site/default.rtl.css">
+		<link rel="stylesheet" href="../../css/site/custom.css">
+		<script src="../../js/bibliotecas/jquery-1.11.2.min.js"></script>
+		<script src="../../js/bibliotecas/jquery-migrate-1.2.1.min.js"></script>
+		<script src="../../js/bibliotecas/bootstrap-datepicker.js"></script>
+		<script src="../../js/bibliotecas/bootstrap-datepicker.pt-BR.min.js"></script>
+		<script type="text/javascript" src="../../js/bibliotecas/templatemo-script.js"></script>
+		<script src="../../js/bibliotecas/angular-animate.js"></script>
+		<script src="../../js/bibliotecas/ui-bootstrap.js"></script>
+		<script src="../../js/bibliotecas/bootstrap.min.js"></script>
+		<script src="../../js/bibliotecas/dirPagination.js"></script>
+		<script src="../../js/bibliotecas/alertify.js"></script>
+	  	<script type="text/javascript" src="../../js/controller/site/loginController.js"></script>
+	  	<script type="text/javascript" src="../../js/service/site/clienteService.js"></script>
+	</body>
+</html>

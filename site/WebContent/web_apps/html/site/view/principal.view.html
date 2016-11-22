@@ -1,0 +1,46 @@
+<!-- <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">  
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+-->
+
+<div class="row" id="principal">
+	
+	<div role="main">
+		<div>
+		
+			<div id="">
+				<img id="imagem" src="web_apps/images/site/banner/battlefield1.png" alt="Profile Photo" class="img-responsive">  
+			</div>
+			<div style="margin-top: -197px; margin-left: 290px;">
+				<h3> </h3>
+			</div>
+		</div>
+		<div class="container">
+			<section>
+				<header id="titulo-destaques">
+					<h2 class="section-title">{{titulo}}</h2>
+					<!--  <a href="" ng-click = "buscaTodos()" class="all">Todos Games</a>  -->
+				</header>
+
+				<div class="product-list">
+					
+					<div class="product" ng-repeat="game in gamesDestaques">
+						<div class="inner-product">
+							<div class="figure-image">
+								<a href="#/detalhes" ng-click="detalhes(game)"><img ng-src="{{game.imgCapa}}" id="capa-game"></a>
+							</div>
+							<h3 class="product-title"><a href="#/detalhes">{{game.titulo}}</a></h3>
+							<small class="price">{{game.preco | currency}}</small>
+							<p>{{game.descricao.substring(0, 70)}}...</p>
+							<a href="" class="button unmuted" ng-click="addCarrinho(game)">Add carrinho</a>
+							<a href="#/detalhes" class="button muted" ng-click="detalhes(game)">Mais detalhes</a>
+						</div>
+					</div> <!-- .product -->
+					
+				</div> <!-- .product-list -->
+
+			</section>
+		</div>
+	</div> <!--FECHA MAIN-->
+
+</div>

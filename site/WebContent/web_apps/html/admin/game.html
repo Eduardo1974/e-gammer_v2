@@ -1,0 +1,112 @@
+
+	
+				<form class="container-fluid">
+	
+					<div class="row">
+						<div class="col-md-12">
+							<h2>Game</h2>
+							<div class="linha"></div>
+						</div>
+					</div>
+					<div class="form-group ">
+						<div class="input-group ">
+							<div class="input-group-addon">
+								<i class="fa fa-book"></i>
+							</div>
+							<input type="text" class="form-control" placeholder="Titulo" ng-model="game.titulo">
+						</div>
+					</div>
+					
+					<div class="form-group ">
+						<div class="input-group ">
+							<div class="input-group-addon">
+								<i class="fa fa-paint-brush"></i>
+							</div>
+							<textarea rows="4" cols="50" maxlength="500"  class="form-control textarea_resize" placeholder="Descrição" ng-model="game.descricao;"></textarea>
+						</div>
+					</div>
+					
+					<div class="row">
+						
+						<div class="col-md-2 fields-css">
+							<select class=" form-control" name="classificacao" ng-model="classificacao.selecionado">
+								<option value="" disabled selected>Classificação</option>
+								<option ng-repeat="cla in classificacao.faixa" value="{{cla.tipo}}" >{{cla.tipo}}</option>
+							</select>
+						</div>
+							
+						<div class="fields-css  col-md-2">
+							<div  class="input-group border-field ">
+								<input type="text" class="form-control border-field" placeholder="Preço" ng-model="game.preco">
+							</div>
+						</div>
+						
+						<div class="fields-css  col-md-2">
+							<div  class="input-group ">
+								<input type="text" class="form-control border-field" placeholder="Quantidade" ng-model="game.quantidade">
+							</div>
+						</div>
+							
+						<div class="col-md-2  date-width ">
+							<input name="lancamento" placeholder="dd/mm/aaaa" id = "agregar" type="text" class="form-control datepicker" >
+                        </div>
+                        
+                        <div class="col-md-2 fields-css">
+							<select class=" form-control" name="plataforma" ng-model="plataforma.selecionado">
+								<option value="" disabled selected>Plataforma</option>
+								<option ng-repeat="pla in plataforma.tipos" value="{{pla.tipo}}" >{{pla.tipo}}</option>
+							</select>
+						</div>
+						
+					</div>
+					<div class="row">
+					<div class="col-md-2 fields-css">
+						<select class=" form-control" ng-model="game.genero.codigo" ng-options="item.codigo as item.descricao for item in generos">
+							<option value="" disabled selected>Generos</option>
+						</select>
+					</div>
+				
+					<div class="col-md-2 fields-css">
+						<select class=" form-control combo-size" ng-model="game.desenvolvedora.codigo" ng-options="item.codigo as item.studio for item in desenvolvedoras ">
+							<option value="" disabled selected>Desenvolvedoras</option>
+						</select>
+					</div>
+					</div>	
+					<div class="row">
+						<div class=" col-md-6">
+							<div  class="input-group border-field image-css">
+								<input type="text" class="form-control border-field " placeholder="Imagem de capa" ng-model="game.imgCapa">
+							</div>
+							<br>
+							<div  class="input-group border-field image-css">
+								<input type="text" class="form-control border-field " placeholder="Imagem de detalhe" ng-model="game.img01">
+							</div>
+						</div>
+						
+						<div class=" col-md-6">
+							<div  class="input-group border-field image-css">
+								<input type="text" class="form-control border-field " placeholder="Imagem de detalhe" ng-model="game.img02">
+							</div>
+							</br>
+							<div  class="input-group border-field image-css">
+								<input type="text" class="form-control border-field " placeholder="Imagem de detalhe" ng-model="game.img03">
+							</div>
+						</div>
+						</br>
+					</div>
+					
+					<div class="form-group ">
+						<button type="submit" class="templatemo-blue-button width-30" ng-show="btnLabel == 'Adicionar'"
+							ng-click="salvar()">{{btnLabel}}</button>
+					</div>
+					
+					<div class="form-group ">
+						<button type="submit" class="templatemo-blue-button width-30" ng-show="btnLabel == 'Alterar'"
+							ng-click="editar(game)">{{btnLabel}}</button>
+					
+						<button type="submit" class="templatemo-blue-button width-30" ng-show="btnLabel == 'Alterar'"
+							ng-click="gameCancel();">Cancelar</button>
+
+					</div>
+				</form>
+			

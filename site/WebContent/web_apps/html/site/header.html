@@ -1,0 +1,45 @@
+<!-- <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">  
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+-->
+		<header ng-controller="HeaderController" class="row" id="top-barra">
+			<div class="col-md-3 col-sm-3">
+				<div class=" " id="logotipo">
+					<a href="#/home#top" id=" ">
+						<img src="web_apps/images/site/logo/logo_white.png" alt="Profile Photo" class="img-responsive"></img>
+					</a>
+				</div>
+				
+			</div>
+			<div class="col-md-1 col-sm-3" id="procurar">
+				<div class="dropdown">
+				  <a href=""  class="dropdown-toggle" id="dropdownCategorias" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				    Procurar
+				    <span class="caret"></span>
+				  </a>
+				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" href="" >
+				    <li ng-repeat = "gen in generos"><a href="" ng-click = "buscaGenero(gen.codigo)">{{gen.descricao}}</a></li>
+				    <li><a href="" ng-click = "buscaTodos()">Ver todos</a></li>
+				  </ul>
+				</div>
+			</div>
+			<div class="col-md-5 col-xs-8 col-sm-7">
+				<div class="input-group" id="barra-pesquisa">
+					<input type="text" class="form-control" ng-model = "titulo" placeholder="Buscar..."></input>
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="button" ng-click="buscaPorTitulo()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+					</span>
+				</div>
+				
+			</div>
+			<div class="col-md-3 col-xs-4 col-sm-2">
+				<div class="right-section pull-right" id="carrinho-login">
+					<a href="#/carrinho" class="cart"><i class="fa fa-shopping-cart"></i> {{qtdItens()}} itens </a>
+					<a href="web_apps/html/site/login.html" class="login-button" ng-if="cliente == null">Login/Register</a>
+					<a href="" class="login-button" ng-if="cliente != null">Olá, {{cliente.nome}}</a>
+					<a href="" class="login-button" ng-if="cliente != null" ng-click="sair()">Sair</a>
+				</div>	
+
+			</div>
+
+		</header>

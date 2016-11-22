@@ -1,0 +1,71 @@
+<!-- <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">  
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+-->
+
+<div class="row" id="principal">
+				
+	<main class="main-content">
+		<div class="container">
+			<div class="page">
+				
+				<table class="cart">
+					<thead>
+						<tr>
+							<th class="product-name">Nome do Produto</th>
+							<th class="product-price">Preço</th>
+							<th class="product-qty">Quantidade</th>
+							<th class="product-total">Total</th>
+							<th class="action"></th>
+						</tr>
+					</thead>
+					<tbody ng-if="listaVazia">
+						<tr ng-repeat="produto in lista">
+							<td class="product-name">
+								<div class="product-thumbnail">
+									<img ng-src="{{produto.imgCapa}}" alt="" style="height:110px;"></img>
+								</div>
+								<div class="product-detail">
+									<h3 class="product-title">{{produto.titulo}}</h3>
+									<p>{{produto.descricao.substring(0, 200)}}</p>
+								</div>
+							</td>
+							<td class="product-price">{{produto.preco | currency}}</td>
+							<td class="product-qty">
+								<select name="#" ng-options="item for item in qtdLista" ng-model="produto.qtdItem" ng-change="updateCarrinho($index, produto.qtdItem);">
+								</select>
+							</td>
+							<td class="product-total">{{( produto.preco * produto.qtdItem ) | currency}}</td>
+							<td class="action"><a href="" ng-click="removerItem($index);"><i class="fa fa-times"></i></a></td>
+						</tr>
+					</tbody>
+					<tbody ng-if="!listaVazia">
+						<tr>
+							<td class="product-name">
+								<div class="product-detail">
+									<h3 class="product-title">Não há produtos no carrinho</h3>
+								</div>
+							</td>
+							<td class="product-price"></td>
+							<td class="product-qty"></td>
+							<td class="product-total"></td>
+							<td class="action"></td>
+						</tr>
+					</tbody>
+				</table> <!-- .cart -->
+
+				<div class="cart-total">
+					<p><strong>Subtotal:</strong> {{valor.subtotal | currency}}</p>
+					<p><strong>Descontos:</strong> {{valor.desconto | currency}}</p>
+					<p class="total"><strong>Total</strong><span class="num"> {{valor.total | currency}}</span></p>
+					<p>
+						<a href="#" class="button muted">Continuar comprando</a>
+						<a href="" ng-click="finalizarCompra()" class="button unmuted">Finalizar compras</a>
+					</p>
+				</div> <!-- .cart-total -->
+				
+			</div>
+		</div> <!-- .container -->
+	</main> <!-- .main-content -->
+
+</div><!-- FECHA PRINCIPAL -->

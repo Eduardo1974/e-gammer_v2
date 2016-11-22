@@ -1,0 +1,33 @@
+<div class="container-fluid ">
+	<div class="form-group ">
+		<button type="submit" class="templatemo-blue-button width-30" ng-click="novoGenero()">Novo</button>
+		<div class="linha"></div>
+	</div>
+	<table class="table table-striped ">
+		<thead >
+			<tr>
+				<th>Descrição</th>
+			</tr>
+		</thead>
+		<tbody >
+			<tr data-ng-repeat="gen in generos.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))" ng-if="generos.length != 0">
+				
+				<td class="col-md-9">{{gen.descricao}}</td>
+				<td>
+                    <a class="btn btn-danger" ng-click="generoDelete(gen.codigo);"> <i class="fa fa-trash-o"></i> Apagar</a>
+                    <a class="btn btn-warning" ng-click="generoEditar(gen);"> <i class="fa fa-trash-o"></i> Editar</a>
+                </td>
+			</tr>
+			<tr ng-if="generos.length == 0">
+				<td>
+					<p>Não existem Generos Cadastrados</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	</br>
+	<uib-pagination boundary-links="true" total-items="generos.length" ng-model="currentPage" 
+		items-per-page="itemsPerPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" 
+		first-text="&laquo;" last-text="&raquo;" ng-change="pageChange()"></uib-pagination>
+	</br>
+</div>

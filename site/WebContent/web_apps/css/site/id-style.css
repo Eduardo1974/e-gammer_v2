@@ -1,0 +1,222 @@
+/* estilo formataÃ§Ã£o dos id's */
+#top-barra {
+	width: 100%;
+	background: #2b2b2b;
+	margin-left: 0%;
+    margin-right: 0%;
+	top:0;				/*top, position e deixam fixo a barra no topo */
+	position:fixed;
+	z-index: 10000; 	/* sobrepoe a barra em cima da pagina */
+}
+#site-content {
+	padding-top: 15px;
+	background-image: url('../../images/site/background/gta_online_1920x1200.jpg');
+	background-attachment: fixed;
+	background-size: 100%;
+}
+#principal {
+	margin-top: 6%;
+	/*padding-top: 15px;*/
+	padding-left: 100px;
+    padding-right: 100px;
+	padding-bottom: 15px;
+	background-size: cover;
+    background-repeat: no-repeat;
+	/*background: url('https://eaassets-a.akamaihd.net/origin-com-store-damassets/content/dam/eadam/N/NFS_16/185353/PDP_Background/1024486_pdpbg_1200x800_en_US_1.jpg') top center fixed;*/
+}
+
+#logotipo{
+	width: 60%;
+	margin: auto;
+	padding-top: 10px;
+}
+#barra-pesquisa {
+	margin: auto;
+	padding: 20px;
+}
+#carrinho-login{
+	padding-top: 10%;
+	margin: auto;
+	padding-right: 15%;
+	
+}
+#descricao{
+	background-color: rgba(5, 4, 4, 0.79); 
+	padding: 18px;
+}
+#capa-game{
+	height: 310px;
+}
+#procurar{
+	margin-top: 25px;
+}
+
+
+/* cor do icone carrinho */
+.fa-shopping-cart{
+	color: #45b77d;
+}
+/* estilos do links */
+a:link, a:visited {
+	text-decoration: none;
+	color: #898e90;
+	outline: 0px none;
+}
+a:hover {
+	text-decoration: underline; 
+	color: #45b77d;
+}
+a:active {
+	text-decoration: none;
+}
+/* estilo formatação logotipo */
+#imagem {
+	width: 100%; height: 70%;
+	margin: auto;
+}
+#titulo-destaques{
+	background-color: white;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+/* estilo ao redimensionar tela de no minimo 768px*/
+@media only screen and (min-width: 768px) {
+	#imagem{
+		width: 70%;
+	}
+	.site-footer .newsletter-form input[type="submit"] {
+	  width: 26%;
+	}
+}
+/* estilo ao redimensionar tela de no mÃ¡ximo 435px*/
+@media only screen and (max-width: 435px) {
+	#principal{
+		margin-top: 40%;
+	}
+	#capa-game{
+		height: 100%;
+	}
+	#procurar{
+		margin-left: auto;
+		margin-right: auto;
+		width: 180px;
+		font-size: xx-large;
+	}
+	#principal{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.site-footer .newsletter-form input[type="submit"] {
+	  width: 50%;
+	}
+	.site-footer .newsletter-form input[type="text"] {
+	  width: 80%;
+	}
+}
+
+.container-pagination{
+    background-color: white;
+    border-radius: 3px;
+    padding: 20px 30px;
+    margin: 30px 0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* ESTILOS USADOS NA PAGINA DE PAGAMENTO */
+#escolha-pagamento{
+	background: white;
+	border-radius: 8px 8px 8px 8px;
+	padding-left: 50px;
+    padding-right: 50px;
+}
+#opcao-pagamento{
+	border: 1px solid #d6d6d6;
+	padding: 20px 40px 20px 30px;
+	margin-top: 20px;
+	overflow: hidden;
+    position: relative;
+    color: #333333;
+}
+
+.icone-pagamento {
+    float: left;
+    width: 100px;
+    text-align: left;
+    height: 300px;
+    border-right: 1px dotted #999;
+}
+.texto-pagmento {
+    text-align: left;
+    float: left;
+    margin: 0 0 0 35px;
+    width: 795px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #333333;
+}
+.texto-pagmento h1 {
+    color: #1061af;
+    margin: 0 0 30px 0;
+    color: #F60;
+    font-weight: 100;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+}
+.texto-pagmento h2 {
+    color: #1061af;
+    margin: 0 0 10px 0;
+    font-weight: 100;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+.total-pagamento {
+    color: #1061af;
+    margin: 30px 0 0 0px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    text-align: left;
+    float: left;
+}
+.texto-pagmento input, select {
+    background-color: #f1f1f1;
+    border: 1px solid #CCCCCC;
+    margin: 3px;
+    padding: 5px;
+}
+.bot-pagamento {
+    float: right;
+    margin: 30px 0 0 0;
+    text-align: right;
+}
+
+.myTable td{
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    padding: 3px;
+}
+.myTable select {
+    background-color: #ffffff;
+    border: 1px solid #CCCCCC;
+    margin: 3px;
+    padding: 7px;
+}
+/*quero colocar seta do lado*/
+#appearance-select{
+   -webkit-appearance: none;  /* Remove estilo padrão do Chrome */
+   -moz-appearance: none; /* Remove estilo padrão do FireFox */
+   appearance: none; /* Remove estilo padrão do FireFox*/
+   background: url(/e-gammer/web_apps/images/site/pagamento/ico-seta.gif) no-repeat #eeeeee;  /* Imagem de fundo (Seta) */
+   background-position: 320px center;  /*Posição da imagem do background*/
+   height:30px; /* Altura do select, importante para que tenha a mesma altura em todo os navegadores */
+   border:1px solid #ddd;
+}
+#select{
+	background-repeat: no-repeat;
+    background-position: right;
+    background-image: url('web_apps/images/site/pagamento/ico-seta.gif');	
+}

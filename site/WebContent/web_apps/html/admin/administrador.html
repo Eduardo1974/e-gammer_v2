@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<title>E-gammer</title>
+	
+	<link rel="icon" href="../../images/site/logo/logo_icone.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="../../images/site/logo/logo_icone.ico" type="image/x-icon" />
+	
+	</head>
+	<body ng-app="egammer"  >
+		<div class="templatemo-flex-row ">
+			<ng-include src="'../padroes/barra_lateral_admin.html'"></ng-include> 
+			<div class="templatemo-content col-1 light-gray-bg">
+				<div ng-view></div>
+			</div>
+		</div>
+		<ng-include src="'../padroes/rodape.html'"></ng-include> 
+		  
+		<!-- JS -->
+		
+		<script type="text/javascript" src="../../js/bibliotecas/angular.min.js"></script>
+		<script type="text/javascript" src="../../js/bibliotecas/angular-route.js"></script>
+		<script type="text/javascript" src="../../js/bibliotecas/angular-translate.js"></script>
+		<script type="text/javascript" src="../../js/comum/comum.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>
+		<link href="../../css/font-awesome.min.css" rel="stylesheet">
+		<link href="../../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../../css/templatemo-style.css" rel="stylesheet">
+		<link href="../../css/jquery-ui.css" rel="stylesheet">
+		<link href="../../css/bootstrap-datepicker.css" rel="stylesheet">
+		<script src="../../js/bibliotecas/jquery-1.11.2.min.js"></script>
+		<script src="../../js/bibliotecas/jquery-migrate-1.2.1.min.js"></script>
+		<script src="../../js/bibliotecas/bootstrap-datepicker.js"></script>
+		<script src="../../js/bibliotecas/bootstrap-datepicker.pt-BR.min.js"></script>
+		<script type="text/javascript" src="../../js/bibliotecas/templatemo-script.js"></script>
+		<script src="../../js/bibliotecas/angular-animate.js"></script>
+		<script src="../../js/bibliotecas/ui-bootstrap.js"></script>
+		<script src="../../js/bibliotecas/bootstrap.min.js"></script>
+		<script src="../../js/bibliotecas/dirPagination.js"></script>
+		<script type="text/javascript" src="../../js/service/admin/generoService.js"></script>
+		<script type="text/javascript" src="../../js/service/admin/desenvolvedoraService.js"></script>
+		<script type="text/javascript" src="../../js/service/admin/gameService.js"></script>
+		<script type="text/javascript" src="../../js/controller/admin/generoController.js"></script>
+		<script type="text/javascript" src="../../js/controller/admin/desenvolvedoraController.js"></script>
+		<script type="text/javascript" src="../../js/controller/admin/gameControllerList.js"></script>
+		<script type="text/javascript" src="../../js/controller/admin/desenvolvedoraControllerList.js"></script>
+		<script type="text/javascript" src="../../js/controller/admin/generoControllerList.js"></script>
+		<script type="text/javascript" src="../../js/controller/admin/gameController.js"></script>
+		  
+	</body>
+</html>
