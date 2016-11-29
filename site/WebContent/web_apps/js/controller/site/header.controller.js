@@ -31,7 +31,7 @@ eGammerControllers.controller("HeaderController",  function($scope,GeneroService
 	function getCliente(){
 		var usuario = StorageHelper.getItem('usuario'); 
 		if(usuario != null){
-			$scope.cliente = usuario;
+			$scope.cliente = usuario[0];
 		}else{
 			$scope.cliente = null;
 		}

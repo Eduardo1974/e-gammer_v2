@@ -5,20 +5,21 @@ app.controller('LoginController', ['$scope', '$http', '$timeout', '$sce', 'Clien
                                    function($scope, $http, $timeout, $sce, clienteService) {
 
 	var CHAVE_STORAGE = 'usuario';
-	var urlPath = "http://localhost:8080/egammer/usuario";
-
+	//var urlPath = "http://localhost:8080/egammer/usuario";
+	var urlPath = "http://localhost:8080/egammer/";
+	
 	$scope.usuario = {};
 	$scope.confirmacao = {};
 	$scope.isLogado = false;
 	$scope.exibirMensagemErro = false;
-	
+	$scope.login = [];
 	$scope.isAtivo = function(tela) {
 		return TelaHelper.tela == tela ? 'active' : '';
 	};
 	
 
 	$scope.doLogin = function() {
-		if($scope.usuario.email == null ||  $scope.usuario.senha == null){
+		if($scope.usuario.username == null ||  $scope.usuario.password == null){
 			$scope.exibirMensagemErro = true;
 			alertify.error('Verifique seu email /ou senha!');
 		}else{
@@ -31,27 +32,30 @@ app.controller('LoginController', ['$scope', '$http', '$timeout', '$sce', 'Clien
 			
 			jQuery.ajax({
 				
-			    url: urlPath + '/login',
+			    url: urlPath + 'login',
 			    data: data1,
 			    dataType: 'json',
 			    contentType: 'application/json',
 			    type: 'POST',
 			    async: false,
-			    success: function (response) {
-			    
+			    success: function (response,status, headers, config) {
+			    	
 			    	var usuario = response
+			    	var token = {token:headers.getResponseHeader('Token')};
 			    	if (usuario == null) {
 		    			$scope.exibirMensagemErro = true;
 		    			return;
 			    	}
-			    	$scope.usuario = usuario;
-			    	StorageHelper.setItem(CHAVE_STORAGE, usuario);
+			    	$scope.login.push(usuario);
+			    	$scope.login.push(token);
+			    	StorageHelper.setItem(CHAVE_STORAGE, $scope.login);
+			    	//StorageHelper.setItem(CHAVE_STORAGE, token);
 			    	$scope.isLogado = true;
 			    	if(response.tipo == "cliente"){
 			    		document.location.href='/front-egammer';
 			    	}else{
 			    		document.location.href='../admin/administrador.html';
-			    	} 	
+			    	}	
 			    }
 			});
 		}
@@ -59,7 +63,7 @@ app.controller('LoginController', ['$scope', '$http', '$timeout', '$sce', 'Clien
 	};
 	
 	$scope.salvar = function() {
-		if($scope.usuario.email == $scope.confirmacao.email &&  $scope.usuario.senha == $scope.confirmacao.senha){
+		if($scope.usuario.username == $scope.confirmacao.username &&  $scope.usuario.password == $scope.confirmacao.password){
 			$scope.exibirMensagemErro = false;
 			var data =  $scope.usuario;
 			

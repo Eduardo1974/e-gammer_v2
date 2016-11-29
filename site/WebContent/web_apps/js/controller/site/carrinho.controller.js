@@ -32,9 +32,9 @@ eGammerControllers.controller("CarrinhoController",  function($scope, serviceAPI
 		}else{
 			$scope.pedido = {
 					usuario:{
-						codigo: cliente.codigo,
-						nome: cliente.nome,
-						tipo: cliente.tipo
+						codigo: cliente[0].codigo,
+						nome: cliente[0].nome,
+						tipo: cliente[0].tipo
 					},
 					valorTotal: $scope.valor.total,
 					itensPedido: $scope.dadosPedido
@@ -161,8 +161,10 @@ eGammerControllers.controller("CarrinhoController",  function($scope, serviceAPI
 			serviceAPI.setPedido($scope.pedido);
 		}
 		var data = $scope.pedido;
+		var token = cliente[1].token;
+		console.log(token);
 		console.log(data);
-		serviceAPI.pedidoSave(data).then(function (response) {
+		serviceAPI.pedidoSave(data,token).then(function (response) {
 			document.location.href = '#/home';
         }); 
 	}

@@ -176,7 +176,7 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 	    	return promessa;
 	    }
 		
-		function _pedidoSave(pedObj) {
+		function _pedidoSave(pedObj,token) {
 	    	var data = JSON.stringify(pedObj);
 	    	console.log(data);
 	    	var promessa;
@@ -184,6 +184,9 @@ angular.module("egammer").factory("serviceAPI",  serviceAPI);
 			    url: urlPathPedido,
 			    data: data,
 			    dataType: 'json',
+			    headers:{
+			    	'Authorization':token
+			    },
 			    contentType: 'application/json',
 			    type: 'POST',
 			    async: false,
