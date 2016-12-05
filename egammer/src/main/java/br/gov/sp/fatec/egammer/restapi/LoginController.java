@@ -23,7 +23,7 @@ import br.gov.sp.fatec.egammer.domain.usuario.Usuario;
 @RequestMapping(value = "/login")
 public class LoginController {
     
-    @Autowired
+    /*@Autowired
     @Qualifier("authenticationManager")
     private AuthenticationManager auth;
 
@@ -38,6 +38,6 @@ public class LoginController {
         usuario.setSenha(null);
            response.setHeader("Token", JwtUtils.generateToken(usuario));
            return usuario;
-    }
+    }*/
 
 }

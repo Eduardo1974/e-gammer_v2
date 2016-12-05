@@ -10,6 +10,6 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Long> {
 	@Query("select u from Usuario u where u.email =?1 and u.senha = ?2")
 	public Usuario buscarPorLoginESenha(final String login, final  String senha);
 	
-	public Usuario findByEmail(String nome);
+	public Usuario findByEmail(String email);
 
 }
